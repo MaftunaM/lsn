@@ -1,0 +1,10 @@
+extends layouts/layout
+block content
+    .home 
+        h1= title
+        a(href="/api/lessons/" class="waves-effect waves-light btn") 
+            | All lessons
+        - const lessons = ['Node', 'JS', 'C#']
+        ul.list 
+            each lesson in lessons  
+                li= lesson                

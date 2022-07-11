@@ -1,0 +1,45 @@
+<h1>Hello from cards</h1>
+<a href="/api/cards" class="waves-effect waves-light btn">Card</a>
+
+<div class="table_lessons">
+    {{#if card}}
+    <table>
+        <tr>
+            <thead>
+                <th>Img </th>
+                <th>Name </th>
+                <th>Year </th>
+                <th>Author </th>
+                <th>Price</th>
+            </thead>
+        </tr>
+        <tbody>
+            {{#each card}}
+            <tr>
+                <td>
+                    <img src="{{img}}" alt="" style="width: 32px">
+                </td>
+                <td>
+                    <a href='/api/cards/{{id}}'>{{name}}</a>
+                </td>
+                <td>
+                    {{year}}
+                </td>
+                <td>
+                    {{author}}
+                </td>
+                <td>
+                    {{price}}
+                </td>
+                <td>
+                    <a href="/api/cards/delete/{{lesson.id}}" class="waves-effect waves-light btn"
+                        style="background: #e53935">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+    <h2>Lessons are empty</h2>
+    {{/if}}
+</div>

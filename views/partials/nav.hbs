@@ -1,0 +1,24 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#if areLessons}}
+            <li class="active"><a href="/api/lessons">All lessons</a></li>
+            {{else}}
+            <li><a href="/api/lessons">All lessons</a></li>
+            {{/if}}
+
+            {{#if isHome}}
+            <li class="active"><a href="/api/lessons/add">Add lesson</a></li>
+            {{else}}
+            <li><a href="/api/lessons/add">Add lesson</a></li>
+            {{/if}}
+
+            {{#if isCard}}
+            <li class="active"><a href="/api/cards">Card</a></li>
+            {{else}}
+            <li><a href="/api/cards">Card</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>

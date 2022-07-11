@@ -1,0 +1,27 @@
+extends layouts/layout
+block content
+    .table_lessons
+        if lessons.length === 0
+            h2 Lessons are empty
+        else 
+            table
+                tr  
+                    thead  
+                        th Img 
+                        th Name 
+                        th Year 
+                        th Author 
+                        th Price
+
+                    tbody 
+                        each lesson in lessons
+                            tr
+                                td 
+                                    img(src=lesson.img alt="" style="width: 32px")
+                                td  
+                                    a(href='/api/lessons/'+lesson.id)= lesson.name  
+                                td= lesson.year
+                                td= lesson.author
+                                td= lesson.price
+                                td 
+                                    a(href="/api/lessons/delete/"+lesson.id class="waves-effect waves-light btn" style="background: #e53935") Delete

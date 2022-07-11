@@ -1,0 +1,20 @@
+extends layouts/layout
+block content   
+    form.col.s12(action="/api/lessons/add" method="post")
+        .row
+            .input-field.col.s6
+                input#name.validate(type='text' name="name")
+                label(for='name') Name
+            .input-field.col.s6
+                input#author.validate(type='text' name="author")
+                label(for='author') Author
+            .input-field.col.s6
+                input#price.validate(type='text' name="price")
+                label(for='price') Price
+            .input-field.col.s6
+                input#img.validate(type='text' name="img")
+                label(for='img') Img
+            .input-field.col.s6
+                input#year.validate(type='number' name="year")
+                label(for='year') Year
+        button(class="waves-effect waves-light btn") Create

@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.body {
+    height: 99vh;
+}
+
+.main {
+    background-color: aqua;
+}
+
+.table_lessons h2 {
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    margin-top: 20px;
+    gap: 0 25px;
+}
+
+.list li {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.card {
+    max-width: 320px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: red;
+}
+
+.card-image {
+    width: 300px;
+    padding-left: 23px;
+}
+.card .card-title{
+    font-size: 24px;
+    font-weight: 300;
+    margin-left: 23px;
+}

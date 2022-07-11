@@ -1,0 +1,13 @@
+extends layouts/main
+block content
+    .row
+        .col.s12.m7
+            .card
+                .card-image
+                    img(src=lesson.img)
+                    span.card-title= lesson.name
+                .card-content
+                    p= lesson.author
+                    p= lesson.price
+                .card-action
+                    a(href='/api/lessons/update/'+lesson.id) Edit
