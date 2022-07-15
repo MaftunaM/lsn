@@ -8,7 +8,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Mirzaabdullayev",
+  "author": "Mahmudova",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -17,7 +17,7 @@
     "helmet": "^5.1.0",
     "joi": "^17.6.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "pug": "^3.0.2",
     "uuid": "^8.3.2"
   }

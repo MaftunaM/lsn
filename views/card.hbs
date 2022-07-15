@@ -1,0 +1,39 @@
+<div class="table_lessons" id="card">
+    {{#if items}}
+    <table>
+        <tr>
+            <thead>
+                <th>Name </th>
+                <th>Count </th>
+                <th>Price </th>
+                <th>Total price</th>
+            </thead>
+        </tr>
+        <tbody>
+            {{#each items}}
+            <tr>
+                <td>
+                    {{name}}
+                </td>
+                <td class="count">
+                    {{count}}
+                </td>
+                <td class="price">
+                    {{price}}
+                </td>
+                <td>
+                    <span class="countPrice">0</span>
+                </td>
+                <td>
+                    <a href="/card/delete/:id" class="waves-effect waves-light btn" style="background: #e53935">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <p class="total">{{total}}</p>
+    {{else}}
+    <h1>Shopping is empty</h1>
+    <a href="/lessons">Buy lessons</a>
+    {{/if}}
+</div>

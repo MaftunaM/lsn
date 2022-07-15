@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
         title: 'Home page',
         isHome: true
     })
-
 })
 
 module.exports = router

@@ -9,6 +9,7 @@ const Lesson = require('../model/lesson')
 router.get('/', async (req, res) => {
     const lessons = await Lesson.getAll()
 
+
     res.render('lessons', {
         title: 'All lessons',
         lessons,
@@ -45,7 +46,7 @@ router.get('/:id', async (req, res) => {
 // Delete single lesson with id
 router.get('/delete/:id', authMiddleware, async (req, res) => {
     await Lesson.removeById(req.params.id)
-    res.redirect('/api/lessons')
+    res.redirect('/lessons')
 })
 
 // Post add lesson
@@ -81,14 +82,14 @@ router.post('/add', authMiddleware, async (req, res) => {
 
     await lesson.save()
 
-    res.redirect('/api/lessons')
+    res.redirect('/lessons')
 })
 
 // Update lesson with id
 router.post('/update/', authMiddleware, async (req, res) => {
     const id = req.body.id
     await Lesson.findByIdAndUpdate(id, req.body)
-    res.redirect('/api/lessons')
+    res.redirect('/lessons')
 })
 
 router.get('/update/:id', authMiddleware, async (req, res) => {

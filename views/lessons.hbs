@@ -17,7 +17,7 @@
                     <img src="{{img}}" alt="" style="width: 32px">
                 </td>
                 <td>
-                    <a href='/api/lessons/{{id}}'>{{name}}</a>
+                    <a href='/lessons/{{id}}'>{{name}}</a>
                 </td>
                 <td>
                     {{year}}
@@ -29,8 +29,14 @@
                     {{price}}
                 </td>
                 <td>
-                    <a href="/api/lessons/delete/{{lesson.id}}" class="waves-effect waves-light btn"
+                    <a href="/lessons/delete/{{id}}" class="waves-effect waves-light btn"
                         style="background: #e53935">Delete</a>
+                </td>
+                <td>
+                    <form action="/card/add" method="post">
+                        <input type="hidden" value="{{id}}" name="id">
+                        <button type="submit" class="btn btn-primary">Buy</button>
+                    </form>
                 </td>
             </tr>
             {{/each}}

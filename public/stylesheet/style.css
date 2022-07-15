@@ -32,7 +32,7 @@ body {
 }
 
 .card {
-    max-width: 320px;
+    max-width: 350px;
     margin: 100px auto;
     display: flex;
     justify-content: center;
@@ -42,10 +42,11 @@ body {
 
 .card-image {
     width: 300px;
-    padding-left: 23px;
+    margin: auto;
 }
 .card .card-title{
-    font-size: 24px;
-    font-weight: 300;
     margin-left: 23px;
+}
+nav .nav-wrapper .brand-logo{
+    margin-left: 25px;
 }

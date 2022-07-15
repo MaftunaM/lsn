@@ -1,8 +1,7 @@
 <div class="row">
     <div class="card">
         <div class="card-image">
-            <img src="{{lesson.img}}" alt="{{lesson.img}}">
-            
+            <img src="{{lesson.img}}" alt="{{lesson.img}}">  
         </div>
         <span class="card-title">{{lesson.name}}</span>
         <div class="card-content">
@@ -10,8 +9,8 @@
             <p>{{lesson.price}}</p>
         </div>
         <div class="card-action">
-            <a href='/api/lessons/update/{{lesson.id}}'>Edit</a>
-            <a href="/api/lessons/delete/{{lesson.id}}" class="waves-effect waves-light btn"
+            <a href='/lessons/update/{{lesson.id}}'>Edit</a>
+            <a href="/lessons/delete/{{lesson.id}}" class="waves-effect waves-light btn"
                 style="background: #e53935">Delete</a>
         </div>
 

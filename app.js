@@ -8,7 +8,7 @@ const { create } = require('express-handlebars')
 // Require routes
 const homeRouter = require('./routes/home')
 const lessonRouter = require('./routes/lesson')
-const cardsRouter = require('./routes/cards')
+const cardRouter = require('./routes/card')
 
 const hbs = create({
     extname: 'hbs',
@@ -40,8 +40,10 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routing
 app.use('/', homeRouter)
-app.use('/api/lessons/', lessonRouter)
-app.use('/api/cards/', cardsRouter)
+app.use('/lessons/', lessonRouter)
+app.use('/card/', cardRouter)
+
+
 
 const port = normalizePort(process.env.port || 3000) // Number
 
