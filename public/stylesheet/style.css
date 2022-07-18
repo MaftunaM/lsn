@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: antiquewhite;
+    background-color: rgb(255, 244, 229);
 }
 
 .body {
@@ -49,4 +49,11 @@ body {
 }
 nav .nav-wrapper .brand-logo{
     margin-left: 25px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   transition: .2s;
+}
+
+nav .nav-wrapper .brand-logo:hover{
+    color: #26a69a;
+  
 }

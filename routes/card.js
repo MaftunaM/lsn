@@ -3,7 +3,7 @@ const router = Router()
 
 const Card = require('../model/card')
 
-// Get home page
+
 router.get('/', async (req, res) => {
     const { price, items } = await Card.fetch()
     res.render('card', {
@@ -24,9 +24,14 @@ router.post('/add', async (req, res) => {
     res.redirect('/card')
 })
 
-router.get('/card/delete/:id', async (req, res) => {
-    await Lesson.removeById(req.params.id)
-    res.redirect('/lessons')
+router.delete('/remove/:id', async (req, res) => {
+    const card = await Card.removeById(req.params.id)
+    if (!card) {
+        // demak qanaqadur oshibka bor
+        return res.send('Error')
+    }
+
+    res.status(200).send(card)
 })
 
 module.exports = router

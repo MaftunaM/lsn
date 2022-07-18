@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/auth')
 
 const Lesson = require('../model/lesson')
 
-// Get all lessons
+
 router.get('/', async (req, res) => {
     const lessons = await Lesson.getAll()
 
@@ -17,23 +17,21 @@ router.get('/', async (req, res) => {
     })
 })
 
-// Get add lesson
+
 router.get('/add', (req, res) => {
     res.render('addLesson', {
         title: 'Add lesson'
     })
 })
 
-// Get single lesson with name
+
 router.get('/lesson', (req, res) => {
-    // console.log(req.query);
     const lesson = lessons.find(les => les.name === req.query.name)
     res.status(200).send(lesson)
 })
 
-// Get single lesson with id
 router.get('/:id', async (req, res) => {
-    // console.log(req.params); // bitta object
+
     const id = req.params.id
     const lesson = await Lesson.findById(id)
 
@@ -43,13 +41,13 @@ router.get('/:id', async (req, res) => {
     })
 })
 
-// Delete single lesson with id
+
 router.get('/delete/:id', authMiddleware, async (req, res) => {
     await Lesson.removeById(req.params.id)
     res.redirect('/lessons')
 })
 
-// Post add lesson
+
 router.post('/add', authMiddleware, async (req, res) => {
 
     const schema = Joi.object({
@@ -85,7 +83,7 @@ router.post('/add', authMiddleware, async (req, res) => {
     res.redirect('/lessons')
 })
 
-// Update lesson with id
+
 router.post('/update/', authMiddleware, async (req, res) => {
     const id = req.body.id
     await Lesson.findByIdAndUpdate(id, req.body)

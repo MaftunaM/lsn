@@ -9,7 +9,7 @@
                 <th>Total price</th>
             </thead>
         </tr>
-        <tbody>
+        <tbody id="body">
             {{#each items}}
             <tr>
                 <td>
@@ -25,11 +25,13 @@
                     <span class="countPrice">0</span>
                 </td>
                 <td>
-                    <a href="/card/delete/:id" class="waves-effect waves-light btn" style="background: #e53935">Delete</a>
+                    <a href="/card/remove/{{id}}" class="waves-effect waves-light btn btn-remove"
+                        style="background: #e53935" data-id="{{id}}">Delete</a>
                 </td>
             </tr>
             {{/each}}
         </tbody>
+       
     </table>
     <p class="total">{{total}}</p>
     {{else}}

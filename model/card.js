@@ -39,30 +39,36 @@ class Card {
             })
         })
     }
+
     static async removeById(id) {
-        try {
-            const lessons = await Lesson.getAll()
-            const idx = lessons.findIndex(lsn => lsn.id === id)
+            const card = await Card.fetch()
+            const idx = card.items.findIndex(item => item.id === id)
     
-            if (idx < 0) {
-                return new Error('Id not found')
-            }
-    
-            lessons.splice(idx, 1)
-    
-            return new Promise((res, rej) => {
-                fs.writeFile(
-                    path.join(__dirname, '..', 'data', 'card.json'),
-                    JSON.stringify(lessons),
-                    (err) => {
+            try {
+                if (idx < 0) {
+                   throw new Error('id not found')
+                }
+
+                card.price = card.price - card.items[idx].price
+
+                if(card.items[idx].count === 1){
+                   const newItems = card.items = card.items.filter(item => item.id !== id)
+                   card.items = newItems
+                }else{
+                    card.items[idx].count--
+                }
+
+                return new Promise((res, rej) => {
+                    fs.writeFile(dir, JSON.stringify(card), (err) => {
                         if (err) rej(err)
-                        res()
+                        else res(card)
                     })
-            })
-        } catch (error) {
-            if (error) console.log(error);
-        }
-    }
-}
+                })
+          
+            }catch (error){
+                   console.log(error)
+            }
+} }
+
   
 module.exports = Card
